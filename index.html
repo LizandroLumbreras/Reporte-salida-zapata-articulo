@@ -218,10 +218,13 @@ buscador.addEventListener("input", () => {
 });
 
 /* ===========================================================
-   🔵 MODAL
+   🔵 MODAL (ORDENADO POR FECHA RECIENTE)
    =========================================================== */
 function abrirModal(item) {
   modal.style.display = "flex";
+
+  // 🔵 ORDENAR LISTA DE SALIDAS POR FECHA DESCENDENTE
+  item.lista.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
 
   modalContent.innerHTML = `
     <button class="cerrar" onclick="cerrarModal()">Cerrar</button>
